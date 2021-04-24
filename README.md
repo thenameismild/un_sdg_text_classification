@@ -80,3 +80,15 @@ This dataset includes the "outcome" which in this competition is the "label(s),"
 Label_1 through Label_12: These columns are populated starting at Label_1 increasing incrementally until all relevent classifications are populated, to a maximum of 12 Labels. The remaining Labels are left blank.
 
 The testing data includes the columns ID, Type, and Text.
+
+# Data PreProcessing and Feature Endineering
+xx
+
+# The Model
+xx
+
+# Evaluation
+xx
+
+# Recommendation
+xx
