@@ -69,7 +69,7 @@ The model that classifies text content by relevant SDG indicators would be used 
 This would be useful for governments, development donors, and development implementers seeking to align resources, find partners, or perform outcomes-focused research.
 
 # The Data
-The training data includes approximately 3,000 web-scraped text from tenders, programs, and documents, as well as news articles about international development and humanitarian aid, and finally text descriptions of organizations involved in those sectors.
+The training data includes 2,995 web-scraped text from tenders, programs, and documents, as well as news articles about international development and humanitarian aid, and finally text descriptions of organizations involved in those sectors.
 
 This dataset includes the "outcome" which in this competition is the "label(s)," i.e. which of the 27 indicators are relevant to the given text. This dataset includes the columns: 
 - ID: Unique ID of text to be classified
@@ -77,18 +77,48 @@ This dataset includes the "outcome" which in this competition is the "label(s),"
 - Text
 - Label_1 through Label_12
 
+From exploring the different type of text we see that:
+- Grant: Description of the grant, what it is and how much they are giving
+- Organization: Description of the organization, what they are doing
+- Contract: Title of the contract
+- Tender: Description of the tender, who they are, what are they doing, which government or organizational body
+- Funding Info: Description of the fund, what they fund can do, who they are giving it to
+- Open Opportunity: Description of different opprotunity available, what they do, who they are
+- News: The news headline
+- Profram: Description of the program, what they do, where they are, who are they
+
 Label_1 through Label_12: These columns are populated starting at Label_1 increasing incrementally until all relevent classifications are populated, to a maximum of 12 Labels. The remaining Labels are left blank.
 
-The testing data includes the columns ID, Type, and Text.
+The testing data includes 998 web-scrapped texthe columns ID, Type, and Text.
+ 
+# Text Preprocessing and Feature Endineering
+From looking at the text I normalized the text by:
+- Removing html markingd
+- Rmoving &nbsp
+- Removing non letters
+- Lowering casing the text
+- Removing stopwords
 
-# Data PreProcessing and Feature Endineering
-xx
+I decided that lemmatizing and keeping the root of the word works best for this text data set
 
 # The Model
-xx
+For the models, I started with ones that are able to do multi label classifications which were KNN, decision tree, mlp and random forest. Then wanted to experiment with model that can take the multi output classifier function which were logistic and ridge classifier to allow the mode to do multilabel classification.
 
-# Evaluation
-xx
+I evaluated the model with Hamming Loss score which is, the fraction of labels that are incorrectly predicted, i.e., the fraction of the wrong labels to the total number of labels.
+
+It reports how many times on average, the relevance of an example to a class label is incorrectly predicted. Therefore, hamming loss takes into account the prediction error (an incorrect label is predicted) and missing error (a relevant label not predicted), normalized over total number of classes and total number of examples.
+
+We would expect the hamming loss to be 0, which would imply no error. This means practically the smaller the value of hamming loss, the better the performance of the learning algorithm.
+
+Each model Hamming Score were:
+- KNN: 0.053
+- Logistic Regression: 0.052
+- Decision Tree: 0.066
+- MLP Classifier: 0.049
+- Random Forest Classifier: 0.056
+- Ridge Classifier CV: 0.0474
 
 # Recommendation
-xx
+When testing the model with the actual testing data provided the Ride Classifier CV performed the best with TF-IDF Vectorizer and it's deafult parameters. 
+
+It's hamming score were 0.0447 meaning it predicted 96% of the predicted indicaors correctly.
