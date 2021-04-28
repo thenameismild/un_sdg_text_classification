@@ -119,6 +119,8 @@ Each model Hamming Score were:
 - Ridge Classifier CV: 0.0474
 
 # Recommendation
-When testing the model with the actual testing data provided the Ride Classifier CV performed the best with TF-IDF Vectorizer and it's deafult parameters. 
+When testing the model with the actual testing data provided the Ride Classifier CV with the Multi Output Classficier function performed the best with TF-IDF Vectorizer and it's deafult parameters. 
 
 It's hamming score were 0.0447 meaning it predicted 96% of the predicted indicaors correctly.
+
+This mean that the best model to use for text classification to clasify which text description for which tenders or organization and its relevance to which indicators is the Ridge Classifier CV with the Multi Output Classficier function.
