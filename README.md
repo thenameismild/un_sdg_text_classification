@@ -91,7 +91,7 @@ Label_1 through Label_12: These columns are populated starting at Label_1 increa
 
 The testing data includes 998 web-scrapped texthe columns ID, Type, and Text.
  
-# Text Preprocessing and Feature Endineering
+# Text Preprocessing and Feature Engineering
 From looking at the text I normalized the text by:
 - Removing html markingd
 - Rmoving &nbsp
