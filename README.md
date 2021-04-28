@@ -26,7 +26,7 @@ Each SDG has several “targets”, or social outcomes that the UN hopes to achi
 
 I will be classifying text content by its relevance to the measurable indicators of the United Nations’ Sustainable Development Goal 3: Health and Well-Being or being refer as SDG 3. SDG 3 has 14 targets and 27 indicators.
 
-##### The SDG 3 Indicators
+### The SDG 3 Indicators
 
 Theere are 27 possible SDG 3 indicators, in the dataset each indicator will be refer using code, e.g. "3.1.1":
 
